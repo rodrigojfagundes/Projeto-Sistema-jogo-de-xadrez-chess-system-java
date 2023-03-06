@@ -12,8 +12,10 @@ public class King extends ChessPiece{
 		// TODO Auto-generated constructor stub
 	}
 	
+
 	@Override
 	public String toString() {
+		//o K vai aparecer no tabuleiro... K pq REI é KING em INGLES
 		return "K";
 	}
 	
@@ -31,7 +33,6 @@ public class King extends ChessPiece{
 		Position p = new Position(0,0);
 		
 		p.setValue(position.getRow() -1, position.getColumn());
-		
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
@@ -40,18 +41,20 @@ public class King extends ChessPiece{
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}		
+		
 				p.setValue(position.getRow(), position.getColumn() -1);
+		
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
-
+		
 				p.setValue(position.getRow(), position.getColumn() +1);
-
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
 				
 				p.setValue(position.getRow() -1 , position.getColumn() -1);
+				
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
@@ -66,11 +69,15 @@ public class King extends ChessPiece{
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
-				
 				p.setValue(position.getRow() +1 , position.getColumn() +1);
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
-				}	
+				}
+				
+				
+		
 		return mat;
 	}
+	
+
 }
