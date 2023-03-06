@@ -16,11 +16,10 @@ public class Program {
 		// TODO Auto-generated method stub
 		
 		ChessMatch chessMatch = new ChessMatch();
-		
 		List<ChessPiece> captured = new ArrayList<>();
 		
 		Scanner sc = new Scanner(System.in);
-		while(true) {
+		while(!chessMatch.getCheck()) {
 		
 		try {	
 		
@@ -33,21 +32,25 @@ public class Program {
 		
 		ChessPosition source = UI.readChessPosition(sc);
 		
-		
 		boolean[][] possibleMoves = chessMatch.possibleMoves(source);
 		UI.clearScreen();
 		
 		UI.printBoard(chessMatch.getPieces(), possibleMoves);
+		
 		System.out.println();
 		System.out.println("target");
 		ChessPosition target = UI.readChessPosition(sc);
 		
 		ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
 		
+		
 		if (capturedPiece != null) {
+		
 			captured.add(capturedPiece);
 		}
+		
 		}
+		
 		catch(ChessException e) {
 			System.out.print(e.getMessage());
 			sc.nextLine();
@@ -56,7 +59,9 @@ public class Program {
 			System.out.print(e.getMessage());
 			sc.nextLine();
 		}
-		}
 	}
+		UI.clearScreen();
+		UI.printMatch(chessMatch, captured);
+}
 
 }
