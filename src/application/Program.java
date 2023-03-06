@@ -12,25 +12,23 @@ public class Program {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
 		ChessMatch chessMatch = new ChessMatch();
 		
 		Scanner sc = new Scanner(System.in);
 		while(true) {
-
 		try {	
-
 		UI.clearScreen();
 		
 		UI.printBoard(chessMatch.getPieces());
 		System.out.println();
-		
+
 		System.out.print("source");
-		
+
 		ChessPosition source = UI.readChessPosition(sc);
 		
 		System.out.println();
-		
+
 		System.out.println("target");
 		ChessPosition target = UI.readChessPosition(sc);
 		

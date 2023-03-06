@@ -7,6 +7,7 @@ import chess.ChessPiece;
 import chess.ChessPosition;
 import chess.Color;
 
+
 public class UI {
 
 	public static final String ANSI_RESET = "\u001B[0m";
@@ -33,6 +34,7 @@ public class UI {
 			System.out.flush();
 		}	
 	
+	
 	public static ChessPosition readChessPosition(Scanner sc) {
 		try {
 		String s = sc.nextLine();
@@ -40,16 +42,18 @@ public class UI {
 		int row = Integer.parseInt(s.substring(1));
 		return new ChessPosition(column, row);
 		}
+
 		catch (RuntimeException e) {
 			throw new InputMismatchException("erro reading chessposition valid values are from a1 to h8 ");
 		}
 	}
+
 	public static void printBoard(ChessPiece[][] pieces) {
-	
 		for (int i = 0; i < pieces.length; i++) {
 			System.out.print((8 - i) + " ");
 
 			for (int j = 0; j < pieces.length; j++) {
+
 				printPiece(pieces[i][j]);
 			}
 			System.out.println();
