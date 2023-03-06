@@ -12,21 +12,27 @@ public class Program {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		ChessMatch chessMatch = new ChessMatch();
 		
 		Scanner sc = new Scanner(System.in);
 		while(true) {
+		//bloco try para erros e excecoes
 		try {	
-
 		UI.clearScreen();
 		
 		UI.printBoard(chessMatch.getPieces());
 		System.out.println();
-		
+		//posicao de origem
 		System.out.print("source");
 		
 		ChessPosition source = UI.readChessPosition(sc);
+		
+		boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+		UI.clearScreen();
+		
+		UI.printBoard(chessMatch.getPieces(), possibleMoves);
+		
 		
 		System.out.println();
 		
@@ -35,7 +41,6 @@ public class Program {
 		 
 		ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
 		}
-		
 		catch(ChessException e) {
 			System.out.print(e.getMessage());
 			sc.nextLine();
