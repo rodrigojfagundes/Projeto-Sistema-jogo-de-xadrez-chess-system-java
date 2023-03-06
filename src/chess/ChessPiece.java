@@ -29,12 +29,13 @@ public abstract class ChessPiece extends Piece{
 		moveCount--;
 	}
 	
+
 	public ChessPosition getChessPosition() {
 		return ChessPosition.fromPosition(position);
 	}
 	
 	protected boolean isThereOpponentPiece(Position position) {
-		ChessPiece p = (ChessPiece)getBoard().piece(position);
+		ChessPiece p = (ChessPiece)getBoard().piece(position); 
 		return p != null && p.getColor() != color;
 		}
 }

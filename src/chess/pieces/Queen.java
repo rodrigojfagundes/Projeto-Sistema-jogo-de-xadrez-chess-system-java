@@ -7,7 +7,6 @@ import chess.Color;
 
 public class Queen extends ChessPiece{
 
-	
 
 	public Queen(Board board, Color color) {
 		super(board, color);
@@ -26,6 +25,7 @@ public class Queen extends ChessPiece{
 		
 		Position p = new Position(0,0);
 
+		
 		p.setValue(position.getRow() -1 , position.getColumn());
 		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 			mat[p.getRow()][p.getColumn()] = true;	
@@ -78,6 +78,9 @@ public class Queen extends ChessPiece{
 					mat[p.getRow()][p.getColumn()] = true;
 				}
 
+						//veerificando as pecas nas posicoes DIAGONAL NORDESTE
+						//NE
+						
 						p.setValue(position.getRow() -1, position.getColumn() +1);						
 						while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {						
 							mat[p.getRow()][p.getColumn()] = true;						
