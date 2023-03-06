@@ -1,4 +1,3 @@
-
 package boardgame;
 
 public class Position {
@@ -12,7 +11,6 @@ public class Position {
 		this.column = column;
 	}
 
-	
 	public int getRow() {
 		return row;
 	}

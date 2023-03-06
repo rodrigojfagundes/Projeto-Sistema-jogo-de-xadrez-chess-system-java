@@ -9,7 +9,7 @@ public class ChessPosition {
 	
 	
 	public ChessPosition(char column, int row) {
-		if (column < 'a' || column > 'h' || row < 1 || row > 8) {
+			if (column < 'a' || column > 'h' || row < 1 || row > 8) {
 			throw new ChessException("error instantiating chessposition. valid value are from a1 to h8");
 		}
 		this.column = column;
@@ -24,6 +24,9 @@ public class ChessPosition {
 		return row;
 	}
 
+	
+	//BASICAMENTE, ESSE METODO PEGA OS VALORES DA COLUNA DA MATRIZ NORMAL Q COMECA COM O 
+	//NUMERO 0(zero) E VAI ATE O 7 E TRANSFORMA E UM TABULEIRO/BOARD... EM Q COMECA DO 1 E VAI ATE O 8...
 	protected Position toPosition() {
 		return new Position (8 - row, column - 'a');
 	}
