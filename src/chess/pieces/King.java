@@ -7,7 +7,7 @@ import chess.Color;
 
 public class King extends ChessPiece{
 
-
+	
 	public King(Board board, Color color) {
 		super(board, color);
 		// TODO Auto-generated constructor stub
@@ -32,21 +32,22 @@ public class King extends ChessPiece{
 		Position p = new Position(0,0);
 		
 		p.setValue(position.getRow() -1, position.getColumn());
+		
 		if (getBoard().positionExists(p) && canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 		
+		
 				p.setValue(position.getRow() +1, position.getColumn());
+		
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}		
 		
 				p.setValue(position.getRow(), position.getColumn() -1);
-		
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
-		
 		
 				p.setValue(position.getRow(), position.getColumn() +1);
 				if (getBoard().positionExists(p) && canMove(p)) {
@@ -54,16 +55,16 @@ public class King extends ChessPiece{
 				}
 				
 				p.setValue(position.getRow() -1 , position.getColumn() -1);
-				
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
 				
 				p.setValue(position.getRow() -1 , position.getColumn() +1);
-		
+				
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
+				
 				
 				p.setValue(position.getRow() +1 , position.getColumn() -1);
 				
@@ -71,9 +72,7 @@ public class King extends ChessPiece{
 					mat[p.getRow()][p.getColumn()] = true;
 				}
 				
-				
 				p.setValue(position.getRow() +1 , position.getColumn() +1);
-				
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
