@@ -1,6 +1,5 @@
 package boardgame;
 
-
 public class Board {
 
 	private int rows;
@@ -30,14 +29,12 @@ public class Board {
 		}
 		return pieces[row][column];
 	}
-
 	public Piece piece(Position position) {
 		if (!positionExists(position)) {
 			throw new BoardException("position not on the board");
 		}
 		return pieces[position.getRow()][position.getColumn()];
 	}
-
 	public void placePiece(Piece piece, Position position) {
 		if (thereIsAPiece(position)) {
 			throw new BoardException("there is already a piece on position " + position);
@@ -47,12 +44,14 @@ public class Board {
 		piece.position = position;
 	}
 	public Piece removePiece(Position position) {
+
 		if (!positionExists(position)) {
 			throw new BoardException("position not on the board");
 		}
 		if (piece(position) == null){
 			return null;
 		}
+		
 		Piece aux = piece(position);
 		aux.position = null;
 		pieces[position.getRow()][position.getColumn()] = null;
@@ -62,7 +61,7 @@ public class Board {
 	private boolean positionExists(int row, int column) {
 		return row >= 0 && row < rows && column >= 0 && column < columns;
 	}
-	
+
 	public boolean positionExists(Position position) {
 	return positionExists(position.getRow(), position.getColumn());
 	}
