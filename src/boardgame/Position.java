@@ -1,4 +1,3 @@
-//pacote BOARDGAME é referente a camada de tabuleiro
 package boardgame;
 
 //classe com a posicao das peças do xadrez
@@ -33,8 +32,4 @@ public class Position {
 	public String toString() {
 		return row + ", " + column;
 	}
-
-	
-	
-	
 }
