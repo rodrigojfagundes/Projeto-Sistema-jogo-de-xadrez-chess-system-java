@@ -7,7 +7,6 @@ import chess.Color;
 
 public class Knight extends ChessPiece{
 
-
 	public Knight(Board board, Color color) {
 		super(board, color);
 		// TODO Auto-generated constructor stub
@@ -30,35 +29,35 @@ public class Knight extends ChessPiece{
 		
 		Position p = new Position(0,0);
 		
+				
 				p.setValue(position.getRow() -1, position.getColumn() -2);
+				//se a posicao P existe, e SE o retorno de canMove for TRUE, entao pode se mover
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
-				}
+				}		
+		
 
 				p.setValue(position.getRow() -2 , position.getColumn() -1);
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
-				
+		
 				p.setValue(position.getRow() -2, position.getColumn() +1);
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
 				
 				p.setValue(position.getRow() -1 , position.getColumn() +2);
-				
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
 				
 				p.setValue(position.getRow() +1 , position.getColumn() +2);
-				
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
 				
 				p.setValue(position.getRow() +2 , position.getColumn() +1);
-				
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
@@ -71,7 +70,7 @@ public class Knight extends ChessPiece{
 				p.setValue(position.getRow() +1 , position.getColumn() -2);
 				if (getBoard().positionExists(p) && canMove(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
-				}
+				}	
 		return mat;
 	}
 }
