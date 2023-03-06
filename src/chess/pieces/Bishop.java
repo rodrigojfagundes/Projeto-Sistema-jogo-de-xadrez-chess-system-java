@@ -11,7 +11,7 @@ public class Bishop extends ChessPiece{
 		super(board, color);
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	@Override
 	public String toString() {
 		return "B"; 
@@ -21,11 +21,8 @@ public class Bishop extends ChessPiece{
 	public boolean[][] possibleMoves() {
 		// TODO Auto-generated method stub
 		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
-		
 		Position p = new Position(0,0);
-		 
 		p.setValue(position.getRow() -1 , position.getColumn()-1);
-		
 		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 			p.setValue(p.getRow() -1, p.getColumn() -1);
@@ -53,7 +50,6 @@ public class Bishop extends ChessPiece{
 				if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
-				
 				p.setValue(position.getRow() +1 , position.getColumn() -1);
 				
 				while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {

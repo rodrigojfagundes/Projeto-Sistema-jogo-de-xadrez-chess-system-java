@@ -14,20 +14,17 @@ public class Program {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+	
 		ChessMatch chessMatch = new ChessMatch();
 		List<ChessPiece> captured = new ArrayList<>();
 		
 		Scanner sc = new Scanner(System.in);
 		while(!chessMatch.getCheck()) {
-
 		try {	
-
 		UI.clearScreen();
-
+	
 		UI.printMatch(chessMatch, captured);
 		System.out.println();
-
 		System.out.print("source");
 		ChessPosition source = UI.readChessPosition(sc);
 		
@@ -59,4 +56,5 @@ public class Program {
 		UI.clearScreen();
 		UI.printMatch(chessMatch, captured);
 }
+
 }
