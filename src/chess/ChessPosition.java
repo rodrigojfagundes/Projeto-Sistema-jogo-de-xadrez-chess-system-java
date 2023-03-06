@@ -3,7 +3,7 @@ package chess;
 import boardgame.Position;
 
 public class ChessPosition {
-	
+
 	private char column;
 	private int row;
 	
@@ -23,7 +23,7 @@ public class ChessPosition {
 		return row;
 	}
 
-	
+
 	protected Position toPosition() {
 		return new Position (8 - row, column - 'a');
 	}
