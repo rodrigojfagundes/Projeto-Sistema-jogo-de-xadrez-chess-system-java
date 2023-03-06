@@ -6,8 +6,7 @@ import chess.ChessPiece;
 import chess.Color;
 
 public class Queen extends ChessPiece{
-
-
+	
 	public Queen(Board board, Color color) {
 		super(board, color);
 		// TODO Auto-generated constructor stub
@@ -20,12 +19,10 @@ public class Queen extends ChessPiece{
 	
 	@Override
 	public boolean[][] possibleMoves() {
-		// TODO Auto-generated method stub
 		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 		
 		Position p = new Position(0,0);
 
-		
 		p.setValue(position.getRow() -1 , position.getColumn());
 		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 			mat[p.getRow()][p.getColumn()] = true;	

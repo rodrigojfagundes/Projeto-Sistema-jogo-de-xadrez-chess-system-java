@@ -7,7 +7,6 @@ import chess.Color;
 
 public class Bishop extends ChessPiece{
 
-
 	public Bishop(Board board, Color color) {
 		super(board, color);
 		// TODO Auto-generated constructor stub
@@ -23,10 +22,13 @@ public class Bishop extends ChessPiece{
 		// TODO Auto-generated method stub
 		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 		
+		//posicao auxiliar
 		Position p = new Position(0,0);
-		 
+		
+		//veerificando as posicoes NOROESTE
+		//nw
 		p.setValue(position.getRow() -1 , position.getColumn()-1);
-
+	
 		while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 			p.setValue(p.getRow() -1, p.getColumn() -1);
@@ -43,20 +45,18 @@ public class Bishop extends ChessPiece{
 				if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
-		
 				p.setValue(position.getRow() +1 , position.getColumn() +1);
 				
 				while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
 					
 					mat[p.getRow()][p.getColumn()] = true;
+				
 					p.setValue(p.getRow() +1, p.getColumn() +1);
 				}
 				if(getBoard().positionExists(p) && isThereOpponentPiece(p)) {
 					mat[p.getRow()][p.getColumn()] = true;
 				}
-
-				//veerificando as posicoes SUDOESTE
-				//below
+				
 				p.setValue(position.getRow() +1 , position.getColumn() -1);
 				
 				while(getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
