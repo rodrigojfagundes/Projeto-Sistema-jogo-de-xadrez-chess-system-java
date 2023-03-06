@@ -2,7 +2,6 @@ package boardgame;
 
 public class Piece {
 
-	//posicao da PEÇA na MATRIZ do jogo... na MATRIZ (não no tabuleiro)
 	protected Position position;
 	private Board board;
 	
